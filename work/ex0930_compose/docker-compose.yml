@@ -1,0 +1,21 @@
+services:
+  sevice_db:
+    image: my_sql
+    container_name: mysql80
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1111
+      MYSQL_DATABASE: my_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 1111
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db/data:/var/lib/mysql # 호스트 경로(./db/data)와 컨테이너(var/lib/mysql)을 연결하여 동기화
+      - ./db/config/:/etc/mysql/conf.d
+
+  service_nginx:
+    image: nginx
+    restart: always
+    ports:
+      - "80:80"
