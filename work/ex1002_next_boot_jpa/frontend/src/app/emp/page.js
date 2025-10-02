@@ -1,3 +1,4 @@
+"use client";
 import EmpTable from "@/component/EmpTable";
 import { Avatar, Card, CardContent, CardHeader, CardMedia } from "@mui/material";
 import { red } from "@mui/material/colors";

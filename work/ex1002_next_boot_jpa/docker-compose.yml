@@ -4,7 +4,7 @@ services:
     networks:
       - sist_net
     volumes:
-      - ./backend/db/conf.d:/etc/mysql/conf.d
+      - ./backend/db/conf.d:/etc/mysql/mysqld.cnf
       - ./backend/db/data:/var/lib/mysql
       - ./backend/db/initdb.d:/docker-entrypoint-initdb.d
     env_file: ./backend/.env
@@ -28,6 +28,8 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql80:3306/my_db
       - SPRING_DATASOURCE_USERNAME=admin
       - SPRING_DATASOURCE_PASSWORD=1111
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQL8Dialect
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     restart: always
 
   # 프론트엔드 지정
