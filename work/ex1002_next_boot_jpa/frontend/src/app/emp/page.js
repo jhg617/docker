@@ -22,7 +22,7 @@ export default function Emp(){
     },[]); // ,[]: 한번만 수행한다
     return(
         <div style={{width:"980px", margin:"10px auto"}}>
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 900 }}>
             <CardHeader
                 avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
